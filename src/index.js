@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HelloWorld from './hello';
 
 ReactDOM.render(
-    <h1>Hello, world!</h1>,//jxss
+    <HelloWorld/>,
     document.getElementById('root')
 );

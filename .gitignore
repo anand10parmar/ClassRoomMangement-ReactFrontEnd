@@ -8,7 +8,7 @@
 
 # production
 /build
-
+/workspace.xml
 # misc
 .DS_Store
 .env.local
