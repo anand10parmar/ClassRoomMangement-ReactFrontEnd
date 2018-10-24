@@ -6,6 +6,6 @@ import '../node_modules/font-awesome/css/font-awesome.min.css';
 import Stateless from './Component/Stateless'
 import Hello from './Component/Hello'
 ReactDOM.render(
-    <Stateless message="This is stateless"/>,
+    <CourseManager/>,
     document.getElementById('root')
 );

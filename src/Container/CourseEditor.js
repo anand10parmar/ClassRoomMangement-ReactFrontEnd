@@ -1,6 +1,7 @@
 import React from 'react'
 import ModuleList from './ModuleList'
 import LessonTabs from './LessonTabs'
+import CourseCard from "../Component/CourseCard";
 
 export default class CourseEditor extends React.Component {
     render() {
@@ -11,6 +12,12 @@ export default class CourseEditor extends React.Component {
                 </div>
                 <div className="col-8">
                     <LessonTabs/>
+                    <div className="card-deck">
+                        <CourseCard/>
+                        <CourseCard/>
+                        <CourseCard/>
+                        <CourseCard/>
+                    </div>
                 </div>
             </div>
 
