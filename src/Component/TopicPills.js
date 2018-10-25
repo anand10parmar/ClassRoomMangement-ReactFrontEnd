@@ -4,7 +4,7 @@ export default class TopicPills
  extends React.Component{
     render(){
         return (
-            <ul className="nav nav-pills">\
+            <ul className="nav nav-pills">
                 <li className="nav-item">
                     <a className="nav-link active"
                        href="#">Topic 1</a>
