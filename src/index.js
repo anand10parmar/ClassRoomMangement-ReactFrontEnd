@@ -7,6 +7,6 @@ import Stateless from './Component/Stateless'
 import Hello from './Component/Hello'
 import App from './examples/App'
 ReactDOM.render(
-    <App/>,
+    <CourseManager/>,
     document.getElementById('root')
 );

@@ -1,0 +1,1 @@
+'course', 'CREATE TABLE `course` (\n  `id` int(11) NOT NULL AUTO_INCREMENT,\n  `created` datetime DEFAULT NULL,\n  `modified` datetime DEFAULT NULL,\n  `title` varchar(255) DEFAULT NULL,\n  PRIMARY KEY (`id`)\n) ENGINE=MyISAM DEFAULT CHARSET=utf8'
