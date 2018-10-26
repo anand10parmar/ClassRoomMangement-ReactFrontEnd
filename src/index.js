@@ -5,7 +5,8 @@ import CourseManager from './Container/CourseManger'
 import '../node_modules/font-awesome/css/font-awesome.min.css';
 import Stateless from './Component/Stateless'
 import Hello from './Component/Hello'
+import App from './examples/App'
 ReactDOM.render(
-    <CourseManager/>,
+    <App/>,
     document.getElementById('root')
 );
