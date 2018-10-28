@@ -1,5 +1,5 @@
 import React from 'react';
-import CourseRow from "../Component/CourseRow"
+import CourseRow from "../component/CourseRow"
 export default class CourseList extends  React.Component {
     constructor (){
         super();

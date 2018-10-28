@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
-import CourseManager from './Container/CourseManger'
+import CourseManager from './container/CourseManger'
 import '../node_modules/font-awesome/css/font-awesome.min.css';
-import Stateless from './Component/Stateless'
-import Hello from './Component/Hello'
+import Stateless from './component/Stateless'
+import Hello from './component/Hello'
 import App from './examples/App'
 ReactDOM.render(
     <CourseManager/>,

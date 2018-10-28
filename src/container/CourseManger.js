@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import CourseCard from '../Component/CourseCard';
+import CourseCard from '../component/CourseCard';
 import ModuleList from './ModuleList';
 import LessonTabs from './LessonTabs';
 import CourseEditor from './CourseEditor'

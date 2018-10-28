@@ -1,7 +1,7 @@
 import React from 'react'
 import ModuleList from './ModuleList'
 import LessonTabs from './LessonTabs'
-import CourseCard from "../Component/CourseCard";
+import CourseCard from "../component/CourseCard";
 
 export default class CourseEditor extends React.Component {
     render() {

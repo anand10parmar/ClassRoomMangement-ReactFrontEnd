@@ -1,5 +1,5 @@
 import React from 'react';
-import ModuleListItem from '../Component/ModuleListItem';
+import ModuleListItem from '../component/ModuleListItem';
 
 export default class ModuleList extends React.Component {
     constructor(){
