@@ -1,8 +1,13 @@
 import React from 'react';
-import CourseRow from "../component/CourseRow"
+import CourseRow from "../component/CourseRow";
+import CourseService from "../service/CourseService"
 export default class CourseList extends  React.Component {
     constructor (){
         super();
+        this.courseService = CourseService instanceof ) {
+
+        }
+
     }
     render(){
         return (
