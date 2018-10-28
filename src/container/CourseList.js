@@ -4,9 +4,23 @@ import CourseService from "../service/CourseService"
 export default class CourseList extends  React.Component {
     constructor (){
         super();
-        this.courseService = CourseService instanceof ) {
+        this.courseService = CourseService.instance;
+        this.state={courses:[]};
+    }
+    componentDidMount(){
+        this.courseService.findAllCourses()
+            .then((courses)=>{
 
-        }
+                this.setState({courses:courses});
+            });
+    }
+    renderCourseRows(){
+        let courses= this.state.courses.map(
+            function(course){
+                return <CourseRow key={course.id} course={course}/>
+            }
+        )
+        return courses;
 
     }
     render(){
@@ -16,11 +30,8 @@ export default class CourseList extends  React.Component {
                 <table className="table">
                     <thead><tr><th>Title</th></tr></thead>
                     <tbody>
-                        <CourseRow/>
-                        <CourseRow/>
-                        <CourseRow/>
-                        <CourseRow/>
-                        <CourseRow/>
+                    {this.renderCourseRows()}
+
                     </tbody>
                 </table>
             </div>
