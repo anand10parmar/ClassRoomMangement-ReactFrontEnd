@@ -11,11 +11,9 @@ export default class CourseEditor extends React.Component {
     }
     selectCourse(courseId){
         this.setState({courseId: courseId});
-        console.log("CourseEditor",this.state);
     }
     componentDidMount(){
         this.selectCourse(this.props.match.params.courseId);
-        console.log("CourseEditor,ModuleList,","componentDidMount",this.state);
     }
     render() {
         return (

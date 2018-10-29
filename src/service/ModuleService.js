@@ -20,4 +20,8 @@ export default class ModuleService {
         })
             .then((response)=>response.json());
     }
+    findAllModulesForCourse(courseId){
+        return fetch(MODULE_API_URL.replace('CID',courseId))
+            .then((response)=>response.json());
+    }
 }

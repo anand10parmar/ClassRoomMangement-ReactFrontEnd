@@ -1,5 +1,6 @@
 import React from 'react';
 import ModuleListItem from '../component/ModuleListItem';
+import ModuleService from '../service/ModuleService';
 
 export default class ModuleList extends React.Component {
     constructor(props){
@@ -9,26 +10,30 @@ export default class ModuleList extends React.Component {
             modules: [],
             courseId: ""
         };
+        this.moduleService=ModuleService.instance;
        this.titleChanged = this.titleChanged.bind(this);
        this.createModule = this.createModule.bind(this);
        this.setCourseId=this.setCourseId.bind(this);
     }
     componentWillReceiveProps(newProps){
-        this.setCourseId
-        (newProps.courseId);
+        this.setCourseId(newProps.courseId);
+        this.findAllModulesForCourse(newProps.courseId);
     }
-
+    findAllModulesForCourse(courseId){
+        this.moduleService.findAllModulesForCourse(courseId)
+            .then((modules)=>{this.setModules(modules)});
+    }
+    setModules(modules){
+        this.setState({modules:modules})
+    }
     componentDidMount(){
         this.setCourseId(this.props.courseId);
+
     }
     setCourseId(courseId){
-        console.log("courseid",courseId);
         this.setState({courseId:courseId});
-        console.log(this.state);
     }
     titleChanged(event){
-        console.log(event.target.value);
-       // this.state.module.title = event.target.value;
        this.setState({module: {title :event.target.value}});
     }
     renderListOfModules(){
@@ -39,8 +44,10 @@ export default class ModuleList extends React.Component {
         return modules;
     }
     createModule(event){
-        console.log(this.state.module.title);
+        this.moduleService
+            .createModule(this.state.courseId,this.state.module);
     }
+
     render() {
         return(
             <div>
