@@ -1,6 +1,6 @@
 import React from 'react';
 import Hello from '../component/Hello';
-import {BrowserRouter as Router,Link, Route} from 'react-router-dom'
+import {BrowserRouter as Router,Link, Route} from 'react-router-dom';
 const Page1 = () => {
     return(<h2>Page 1</h2>)
 };
