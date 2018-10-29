@@ -28,5 +28,13 @@ class CourseService{
             method: 'POST'
         }).then(response=>response.json());
     }
+    deleteCourse(courseId){
+        return fetch(COURSE_API_URL+'/'+courseId,{
+            headers:{
+                'Content-Type':'application/json'
+            },
+            method:'DELETE'
+        }).then(response=>response.json());
+    }
 }
 export default CourseService;
