@@ -20,6 +20,7 @@ export default class ModuleList extends React.Component {
         this.findAllModulesForCourse(newProps.courseId);
     }
     findAllModulesForCourse(courseId){
+        console.log("module setted");
         this.moduleService.findAllModulesForCourse(courseId)
             .then((modules)=>{this.setModules(modules)});
     }
@@ -45,7 +46,8 @@ export default class ModuleList extends React.Component {
     }
     createModule(event){
         this.moduleService
-            .createModule(this.state.courseId,this.state.module);
+            .createModule(this.state.courseId,this.state.module)
+            .then(this.findAllModulesForCourse(this.state.courseId));
     }
 
     render() {
