@@ -11,9 +11,11 @@ export default class CourseEditor extends React.Component {
     }
     selectCourse(courseId){
         this.setState({courseId: courseId});
+        console.log("CourseEditor",this.state);
     }
     componentDidMount(){
         this.selectCourse(this.props.match.params.courseId);
+        console.log("CourseEditor,ModuleList,","componentDidMount",this.state);
     }
     render() {
         return (
@@ -21,7 +23,7 @@ export default class CourseEditor extends React.Component {
             <h2>Editing course: {this.state.courseId}</h2>
             <div className="row">
                 <div className="col-4">
-                    <ModuleList/>
+                    <ModuleList courseId={this.state.courseId}/>
                 </div>
                 <div className="col-8">
                     <LessonTabs/>
