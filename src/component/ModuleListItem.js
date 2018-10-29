@@ -7,10 +7,10 @@ export default class  ModuleListItem  extends React.Component{
     render(){
         return (
             <li className = "list-group-item">
-                {this.props.title}
+                {this.props.module.title}
                 <span className="float-right">
-                    <i className="fa fa-trash"></i>
-                    <i className="fa fa-pencil"></i>
+                    <button onClick={()=>{this.props.delete(this.props.module.id)}} className="btn btn-danger fa fa-trash"></button>
+                    <button className="btn btn-primary fa fa-pencil"></button>
                 </span>
             </li>
         );

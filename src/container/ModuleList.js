@@ -14,6 +14,8 @@ export default class ModuleList extends React.Component {
        this.titleChanged = this.titleChanged.bind(this);
        this.createModule = this.createModule.bind(this);
        this.setCourseId=this.setCourseId.bind(this);
+       this.deleteModule=this.deleteModule.bind(this);
+       this.findAllModulesForCourse=this.findAllModulesForCourse.bind(this);
     }
     componentWillReceiveProps(newProps){
         this.setCourseId(newProps.courseId);
@@ -41,7 +43,7 @@ export default class ModuleList extends React.Component {
         let modules =
                 this.state.modules.map(
                     (module)=>
-                        <ModuleListItem key={module.id} title= {module.title}/>);
+                        <ModuleListItem key={module.id} module={module} delete={this.deleteModule} />);
         return modules;
     }
     createModule(event){
@@ -49,7 +51,10 @@ export default class ModuleList extends React.Component {
             .createModule(this.state.courseId,this.state.module)
             .then(this.findAllModulesForCourse(this.state.courseId));
     }
-
+    deleteModule(moduleId){
+        this.moduleService.deleteModule(moduleId)
+            .then(this.findAllModulesForCourse(this.state.courseId));
+    }
     render() {
         return(
             <div>
